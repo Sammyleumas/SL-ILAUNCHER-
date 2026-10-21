@@ -23,6 +23,7 @@ jobs:
         run: |
           mkdir -p "$RUNNER_TEMP/wrapgen"
           cd "$RUNNER_TEMP/wrapgen"
+          echo "rootProject.name = 'wrapgen'" > settings.gradle
           gradle wrapper --gradle-version 8.10.2 --distribution-type bin
           cd "$GITHUB_WORKSPACE"
           mkdir -p gradle/wrapper
