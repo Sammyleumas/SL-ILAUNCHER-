@@ -1,0 +1,18 @@
+SL-LAUNCHER - SETUP ON AN ANDROID PHONE (no Android Studio)
+
+1. Upload all project files to a new GitHub repo (Add file > Upload files).
+   If gradle/wrapper/gradle-wrapper.jar did not upload, that's fine: step 3 generates it.
+2. Make the workflows. Hidden folders (.github) often fail to upload, so create each one by hand:
+   Add file > Create new file. Name: .github/workflows/generate-wrapper.yml
+   Paste the contents of GITHUB-WORKFLOWS/1-generate-wrapper.yml. Commit.
+   Repeat with name .github/workflows/build-apk.yml and GITHUB-WORKFLOWS/2-build-apk.yml.
+   (3-release-apk-OPTIONAL.yml needs signing secrets; skip it for now.)
+3. Actions tab > "SL-LAUNCHER Generate Wrapper" > Run workflow. Wait for the green tick.
+   If it fails with a permission error: Settings > Actions > General > Workflow permissions > Read and write.
+4. Actions tab > "SL-LAUNCHER Build APK" > Run workflow.
+5. Open the finished run > Artifacts > SL-LAUNCHER-debug-apk > download, unzip, install app-debug.apk.
+6. Press Home > choose SL-LAUNCHER > Always.
+
+Developer: Abiodun Samuel Feranmi (SAMMY LEUMAS) - SL-TECHCO
+WhatsApp 09078076906 - abiodunsamuel112@gmail.com
+Status: Stage 1 source, not yet verified by a real build.
